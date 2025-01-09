@@ -8,13 +8,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <section>
-      <div className="mx-[2%] md:mx-[60px]">
+    <section className="overflow-x-hidden">
+      <div className="mx-[2%] xl:mx-[60px] ">
         <Hero />
-        <AdsOne/>
         <Categories />
-        <BestSeller/>
-        <AdsTwo/>
+        <AdsOne />
+        <BestSeller />
+        <AdsTwo />
       </div>
       <Brands />
     </section>

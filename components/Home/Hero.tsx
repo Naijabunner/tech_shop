@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div className='relative overflow-x-hidden flex max-lg:flex-col justify-start items-center w-full max-w-[2131px] rounded-3xl  py-[100px] xl:p-[100px]  2xl:mx-auto bg-gradient-to-r from-[#EBEBEB] via-[#d1d0d0] to-[#EBEBEB]  '>
+    <div className='relative flex max-lg:flex-col justify-start items-center w-full max-w-[2131px] rounded-3xl  py-[100px] xl:p-[100px]  2xl:mx-auto bg-gradient-to-r from-[#EBEBEB] via-[#d1d0d0] to-[#EBEBEB]  '>
       <div className="text self-start space-y-2 w-full leading-tight pl-5 ">
         <h1 className='relative font-bold  mediumText   p-0 m-0'>
           <p className='absolute -top-5 md:-top-8 font-medium max-sm:text-base max-md:text-lg smallText  '>

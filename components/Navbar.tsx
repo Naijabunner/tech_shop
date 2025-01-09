@@ -15,7 +15,7 @@ const navItemsRight = [
 
 const Navbar = () => {
   return (
-    <nav className='w-full bg-blue-300 overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  grid items-center'>
+    <nav className='w-full overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  grid items-center'>
         <div className="mainContent flex justify-between gap-10 items-center">
             <Logo/>
             <div className="flex w-full justify-between items-center">
