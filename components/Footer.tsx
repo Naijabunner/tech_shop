@@ -7,11 +7,11 @@ const ad=['+7065761877 2. Lekki ', 'Street, Lekki Phase 1', 'Eti-Osa, Lagos']
 
 const Footer = () => {
     return (
-        <footer className='max-w-[2127px] mx-auto px-[6%] my-24 md:px-[70px] flex gap-10 justify-between  flex-wrap'>
+        <footer className='max-w-[2127px] mx-auto px-[6%] my-24 md:px-[70px] flex gap-5 justify-between  flex-wrap'>
             <FooterItem header={<Logo/>} body={<DescSocials/>} />
             <FooterItem header="Contact Us" body={<FooterList items={ql}/>}/>
             <FooterItem header="Follow Us" body={<FooterList items={ad}/>} />
-            <FooterItem header="About Us" body="We are a tech shop providing the best tech products." />
+            <FooterItem header="About Us" body={<EmailForm/>} />
         </footer>
     )
 }
@@ -23,9 +23,9 @@ interface FooterItemProps {
 
 const FooterItem: React.FC<FooterItemProps> = ({ header, body }) => {
     return (
-        <div className="footer-item space-y-5  ">
+        <div className="footer-item space-y-5 ">
             <h4 className='text-[33.27px] font-bold'>{header}</h4>
-            <p className='text-[24px] font-medium'>{body}</p>
+            <div className='text-[24divx] font-medium'>{body}</div>
         </div> 
     )
 }
@@ -49,7 +49,7 @@ const DescSocials = () => {
 
 const FooterList = ({items}:{items: string[]}) => {
     return (
-        <ul className=' text-[#545252] space-y-5 text-[24px]  items-center fill-black'>
+        <ul className=' text-[#545252]  space-y-5 text-[24px]  items-center fill-black'>
             {
                 items.map((item, index) => {
                     return (
@@ -61,6 +61,17 @@ const FooterList = ({items}:{items: string[]}) => {
     )
 }
 
+const EmailForm =()=>{
+    return(
+        <div className=" space-y-5  w-[400px]">
+            <header className=' font-semibold text-[#323232] text-3xl 4xl:text-[35px]'>For Latest News & Update </header>
+            <form action="" className=' flex items-center gap-2 p-1 justify-between  w-full rounded-full bg-[#F5F5F5] '>
+                <input type="text" placeholder='Enter Your Email' className='bg-transparent placeholder:text-[#AEAEAE] pl-4 w-[70%]' />
+                <button className=' w-full max-w-[40%] h-[60px] rounded-full bg-[#FF3333] text-white'> Subscribe</button>
+            </form>
+        </div>
+    )
+}
 
 const Logo = () => {
     return (
