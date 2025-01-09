@@ -6,21 +6,17 @@ import React from 'react'
 const navItemsLeft = [
     { path: '/', title: 'Home', href: '/' },
     { path: '/shop', title: 'Shop', href: '/shop' },
-    { path: '/about', title: 'About', href: '/about' },
-    { path: '/contact', title: 'Contact', href: '/contact' },
 ];
 
 const navItemsRight = [
-    { path: '/', title: 'Home', href: '/' },
-    { path: '/shop', title: 'Shop', href: '/shop' },
     { path: '/about', title: 'About', href: '/about' },
     { path: '/contact', title: 'Contact', href: '/contact' },
 ];
 
 const Navbar = () => {
   return (
-    <nav className='w-full max-w-[2127px] mx-auto py-10 px-[5%] md:px-[60px]  grid items-center'>
-        <div className="mainContent flex justify-between">
+    <nav className='w-full bg-blue-300 overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  grid items-center'>
+        <div className="mainContent flex justify-between gap-10 items-center">
             <Logo/>
             <div className="flex w-full justify-between items-center">
             <NavItem items={navItemsLeft}/>
@@ -34,7 +30,7 @@ const Navbar = () => {
 
 const NavItem = ({ items }:{ items : navItems[]}) => {
     return (
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-4 text-[#A1A1A1] text-base lg:text-[18px] font-medium">
             {items.map((item) => (
                 <li key={item.path}>
                     <a href={item.href} className="hover:underline">
@@ -49,10 +45,10 @@ const NavItem = ({ items }:{ items : navItems[]}) => {
 
 const Logo = () => {
     return (
-        <header aria-label='e-shop logo' className=' flex justify-start'>
+        <header aria-label='e-shop logo' className=' space-x-3 flex justify-start items-center'>
             {/* <Image src={'/'} alt='shop-logo' height={29} width={30} /> */}
-            <ShoppingCart className=' size-5 ' color='red'/>
-            <p className='flex items-center'>e- <span>shop</span> </p>
+            <ShoppingCart className=' size-7 4xl:size-10 font-bold stroke-red-600 ' />
+            <p className='flex items-center text-2xl md:text-3xl 4xl:text-[38px] font-medium'>e- <span className='font-bold text-red-600'>shop</span> </p>
         </header>
     )
 }
