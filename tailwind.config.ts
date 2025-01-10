@@ -36,7 +36,11 @@ export default {
         '5xl': '2560px',
         // => @media (min-width: 2560px) { ... }
         // => @media (min-width: 1536px) { ... }
-      }
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        // vujahday: ["Vujahday Script", "cursive"],
+      },
     },
   },
   plugins: [],

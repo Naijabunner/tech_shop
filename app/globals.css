@@ -45,6 +45,12 @@ body {
 }
 
 .marquee{
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:60px;
   animation: marqueeAnimation 20s linear infinite; 
 }
 

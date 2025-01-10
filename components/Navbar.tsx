@@ -43,7 +43,7 @@ const NavItem = ({ items }:{ items : navItems[]}) => {
 };
 
 
-const Logo = () => {
+export const Logo = () => {
     return (
         <header aria-label='e-shop logo' className=' space-x-3 flex justify-start items-center'>
             {/* <Image src={'/'} alt='shop-logo' height={29} width={30} /> */}
