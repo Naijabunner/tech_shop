@@ -5,8 +5,8 @@ import Image from 'next/image'
 const arr =[beats,beats,beats,beats]
 const Brands = () => {
   return (
-    <section className=' bg-zinc-500'>
-        <div className=' max-w-[2127px] mx-auto px-5 py-24 md:px-[200px] flex gap-10 justify-between'>
+    <section className=' bg-[#F4F4F4] flex py-[150px] items-center overflow-hidden gap-[60px]'>
+        <div className='  marquee  flex justify-between gap-[60px]  min-w-[100%]  items-center '>
         {
             arr.map((image, index)=>{
                 return(
@@ -19,7 +19,23 @@ const Brands = () => {
                 )
             })
         }
-    </div>   
+      
+    </div>    
+        <div className='  marquee  flex justify-between gap-[60px]  min-w-[100%]  items-center '>
+        {
+            arr.map((image, index)=>{
+                return(
+                    <Image
+                    src={image}
+                    alt='image'
+                    width={150}
+                    height={150}
+                    />
+                )
+            })
+        }
+      
+    </div>    
     </section>
  
   )

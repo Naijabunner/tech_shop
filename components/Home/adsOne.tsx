@@ -3,7 +3,7 @@ import React from 'react'
 
 const AdsOne = () => {
     return (
-        <div className=' relative mt-20 xl:mt-52  max-md:overflow-x-hidden  max-w-[1966.84px] flex justify-between items-center gap-10 max-xl:flex-col py-100 px-10 mx-auto my-20 rounded-3xl bg-[#FF3333]'>
+        <div className=' relative mt-20 max-xl:pb-10 xl:mt-52  max-md:overflow-x-hidden  max-w-[1966.84px] flex justify-between items-center gap-10 max-xl:flex-col py-100 px-10 mx-auto my-20 rounded-3xl bg-[#FF3333]'>
             <div className=" h-fit pt-16">
                 <p className='text-[80px] sm:text-[100px] 4xl:text-[169.99px] font-black text-white relative'>FINE
                     <span className=' absolute   top-[10%] left-0 text-sm'>20% OFF</span>
@@ -24,7 +24,8 @@ const AdsOne = () => {
                 <p>Beats solo Air</p>
                 <p className='text-[57.23px] font-semibold'>Summer Sale</p>
                 <p className='text-[20.95px]'>Enjoy quality sound that will make you enjoy music at its best</p>
-                <button>
+
+                <button className={`text-[#FF3333] bg-white mt-2 rounded-full px-8 py-3 font-medium text-base`}>
                     Shop
                 </button>
             </div>

@@ -7,7 +7,7 @@ const ad=['+7065761877 2. Lekki ', 'Street, Lekki Phase 1', 'Eti-Osa, Lagos']
 
 const Footer = () => {
     return (
-        <footer className='max-w-[2127px] mx-auto px-[6%] my-24 md:px-[70px] flex gap-5 justify-between  flex-wrap'>
+        <footer className='max-w-[2127px] bg-green-300 overflow-hidden mx-auto px-[6%] my-24 md:px-[70px] flex gap-5 justify-between  flex-wrap'>
             <FooterItem header={<Logo/>} body={<DescSocials/>} />
             <FooterItem header="Contact Us" body={<FooterList items={ql}/>}/>
             <FooterItem header="Follow Us" body={<FooterList items={ad}/>} />
