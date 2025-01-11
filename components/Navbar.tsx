@@ -1,6 +1,9 @@
+'use client'
 import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useRef, useState } from 'react'
+import Hambuger from './Hamburger';
 
 
 const navItemsLeft = [
@@ -14,17 +17,72 @@ const navItemsRight = [
 ];
 
 const Navbar = () => {
+    const pathName=usePathname()
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+    const navbarRef = useRef<HTMLDivElement>(null);
+    const hamburgerRef = useRef<HTMLLabelElement>(null); 
+    // const [hash, setHash] = useState<string | null>(null);
+  
+    // Toggle the body scroll based on navbar visibility
+    useEffect(() => {
+      if (isNavbarOpen) {
+        document.body.style.overflowY = "hidden"; // Lock scroll
+      } else {
+        document.body.style.overflowY = "auto"; // Unlock scroll
+      }
+      return () => {
+        document.body.style.overflowY = "auto";
+      };
+    }, [isNavbarOpen]);
+  
+    // Close navbar if clicked outside
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          navbarRef.current &&
+          !navbarRef.current.contains(event.target as Node) && 
+          hamburgerRef.current &&
+          !hamburgerRef.current.contains(event.target as Node)
+        ) {
+          setIsNavbarOpen(false);
+        }
+      };
+  
+      if (isNavbarOpen) {
+        document.addEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [isNavbarOpen]);
+
+
+
   return (
-    <nav className='w-full overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  grid items-center'>
+    <header>
+    <nav className='w-full flex justify-between overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  md:grid items-center'>
         <div className="mainContent flex justify-between gap-10 items-center">
             <Logo/>
-            <div className="flex w-full justify-between items-center">
+            <div className="md:flex w-full hidden justify-between items-center">
             <NavItem items={navItemsLeft}/>
             <NavItem items={navItemsRight}/>
             </div>
         </div>
+        <div className='md:hidden mr-3'>
+          <Hambuger setState={setIsNavbarOpen} state={isNavbarOpen} hamburgerRef={hamburgerRef} />
+        </div>
 
+        {/* <aside>
+
+        </aside> */}
     </nav>
+    <aside className=' fixed bg-green-200 w-screen h-screen'>
+
+    </aside>
+    </header>
   )
 }
 

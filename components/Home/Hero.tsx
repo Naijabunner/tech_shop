@@ -63,6 +63,7 @@ const TypeWriter=()=>{
       {examples[textIndex].split("").map((L,index)=>{
         return(
           <motion.span
+          key={index}
           initial={{
             opacity:0
           }}
