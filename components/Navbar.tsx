@@ -19,7 +19,7 @@ const navItemsRight = [
 const Navbar = () => {
     const pathName=usePathname()
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-    const navbarRef = useRef<HTMLDivElement>(null);
+    const navbarRef = useRef<HTMLUListElement>(null);
     const hamburgerRef = useRef<HTMLLabelElement>(null); 
     // const [hash, setHash] = useState<string | null>(null);
   
@@ -63,7 +63,7 @@ const Navbar = () => {
 
   return (
     <header>
-    <nav className='w-full flex justify-between overflow-x-hidden max-w-[2127px] mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  md:grid items-center'>
+    <nav className='w-full flex justify-between overflow-x-hidden max-w-[2127px] relative z-50 mx-auto py-5 lg:py-10 px-[5%] md:px-[60px]  md:grid items-center'>
         <div className="mainContent flex justify-between gap-10 items-center">
             <Logo/>
             <div className="md:flex w-full hidden justify-between items-center">
@@ -79,9 +79,17 @@ const Navbar = () => {
 
         </aside> */}
     </nav>
-    <aside className=' fixed bg-green-200 w-screen h-screen'>
-
-    </aside>
+    {/* <aside className=' bottom-0 z-20 fixed bg-green w-screen h-full pt-[70px]'>
+          <ul ref={navbarRef} className="flex flex-col justify-center items-center bg-white w-full min-h-16">
+          {  [...navItemsLeft,...navItemsRight].map((item)=>(
+            <li
+            onClick={()=>setIsNavbarOpen(false)}
+            className=' cursor-pointer w-full py-5 border-b-2 text-center text-lg border-b-red-200'>
+            {item.title}
+            </li>
+          ))}
+          </ul>
+    </aside> */}
     </header>
   )
 }
